@@ -5,6 +5,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{D0BC97AC-6435-48E8-A6D5-FA741FFAF23D}|ProjetMath\\ProjetMath.vcxproj|C:\\Users\\lguillermont\\Documents\\GitHub\\MathMoteur\\ProjetMath\\ProjetMath\\ProjetMath.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{D0BC97AC-6435-48E8-A6D5-FA741FFAF23D}|ProjetMath\\ProjetMath.vcxproj|solutionrelative:ProjetMath\\ProjetMath.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0BC97AC-6435-48E8-A6D5-FA741FFAF23D}|ProjetMath\\ProjetMath.vcxproj|C:\\Users\\lguillermont\\Documents\\GitHub\\MathMoteur\\ProjetMath\\ProjetMath\\Settings.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D0BC97AC-6435-48E8-A6D5-FA741FFAF23D}|ProjetMath\\ProjetMath.vcxproj|solutionrelative:ProjetMath\\Settings.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0BC97AC-6435-48E8-A6D5-FA741FFAF23D}|ProjetMath\\ProjetMath.vcxproj|C:\\Users\\lguillermont\\Documents\\GitHub\\MathMoteur\\ProjetMath\\ProjetMath\\Settings.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D0BC97AC-6435-48E8-A6D5-FA741FFAF23D}|ProjetMath\\ProjetMath.vcxproj|solutionrelative:ProjetMath\\Settings.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +22,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Settings.h",
+              "DocumentMoniker": "C:\\Users\\lguillermont\\Documents\\GitHub\\MathMoteur\\ProjetMath\\ProjetMath\\Settings.h",
+              "RelativeDocumentMoniker": "ProjetMath\\Settings.h",
+              "ToolTip": "C:\\Users\\lguillermont\\Documents\\GitHub\\MathMoteur\\ProjetMath\\ProjetMath\\Settings.h",
+              "RelativeToolTip": "ProjetMath\\Settings.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-06T07:21:07.086Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Settings.cpp",
+              "DocumentMoniker": "C:\\Users\\lguillermont\\Documents\\GitHub\\MathMoteur\\ProjetMath\\ProjetMath\\Settings.cpp",
+              "RelativeDocumentMoniker": "ProjetMath\\Settings.cpp",
+              "ToolTip": "C:\\Users\\lguillermont\\Documents\\GitHub\\MathMoteur\\ProjetMath\\ProjetMath\\Settings.cpp",
+              "RelativeToolTip": "ProjetMath\\Settings.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-06T07:21:15.512Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +58,7 @@
               "RelativeDocumentMoniker": "ProjetMath\\ProjetMath.cpp",
               "ToolTip": "C:\\Users\\lguillermont\\Documents\\GitHub\\MathMoteur\\ProjetMath\\ProjetMath\\ProjetMath.cpp",
               "RelativeToolTip": "ProjetMath\\ProjetMath.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-04T07:13:53.049Z",
               "EditorCaption": ""

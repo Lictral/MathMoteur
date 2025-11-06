@@ -1,7 +1,10 @@
 #include <iostream>
 #include <ddkernel.h>
+#include <string>
+#include <cstdlib>
+#include "Settings.h"
 
-int main()
+int main(int argc, char* argv[])
 {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     DWORD mode;
@@ -14,17 +17,27 @@ int main()
     std::cout << "\033[2J";         // Erase console
     std::cout << "\033[H";          // Home position
     
-    int height = 20;
-    int width = 100;
-
-    for (int i = 0; i < height; i++)
+    if (argc < 4)
     {
-        for (int j = 0; j < width; j++)
-        {
-
-        }
+        std::cout << "you need at least 1 or 2 command argument to use" << std::endl;
+        return false;
     }
 
+    //if (argv[1] != "-h")
+    //{
+    //    std::cout << "you need to write the command -h" << std::endl;
+    //    return false;
+    //}
+
+    //if (argv[3] != "-w")
+    //{
+    //    std::cout << "you need to write the command -w" << std::endl;
+    //    return false;
+    //}
+
+    Settings settings(argc, argv);
+    settings.ScreenSimulation();
+    settings.Display();
 
 }
 
