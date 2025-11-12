@@ -6,16 +6,18 @@ class Settings
 public :
 	Settings();
 	Settings(int argc, char* argv[]);
-	void ScreenSimulation();
-	void Display();
+	int GetScreenHeight();
+	int GetScreenWidth();
 
 private : 
+	friend class Screen;
+
 	int m_height;
 	int m_width;
+	int m_argc;
 
 	std::string m_commandHeight;
 	std::string m_commandWidth;
 	std::string m_screen;
-	int m_argc;
 };
 

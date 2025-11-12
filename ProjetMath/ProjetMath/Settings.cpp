@@ -20,23 +20,14 @@ Settings::Settings(int argc, char* argv[])
     m_screen = '\n';
 }
 
-void Settings::ScreenSimulation()
+int Settings::GetScreenHeight()
 {
-    for (int i = 0; i < m_height; i++)
-    {
-        for (int j = 0; j < m_width; j++)
-        {
-            m_screen += '.';
-        }
-        m_screen += '\n';
-    }
+    return m_height;
 }
 
-void Settings::Display()
+int Settings::GetScreenWidth()
 {
-    std::cout << "\n==== DISPLAY SCREEN ====\n" << std::endl;
-    std::cout << m_screen << std::endl;
-    std::cout << "\n==== END SCREEN ====\n" << std::endl;
+    return m_width;
 }
 
 

@@ -3,6 +3,7 @@
 #include <string>
 #include <cstdlib>
 #include "Settings.h"
+#include "Screen.h"
 
 int main(int argc, char* argv[])
 {
@@ -36,8 +37,9 @@ int main(int argc, char* argv[])
     //}
 
     Settings settings(argc, argv);
-    settings.ScreenSimulation();
-    settings.Display();
+    Screen screen;
+    screen.ScreenSimulation();
+    screen.Display();
 
 }
 

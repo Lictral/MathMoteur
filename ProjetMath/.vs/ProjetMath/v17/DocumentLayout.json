@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\lguillermont\\Documents\\GitHub\\MathMoteur\\ProjetMath\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D0BC97AC-6435-48E8-A6D5-FA741FFAF23D}|ProjetMath\\ProjetMath.vcxproj|C:\\Users\\lguillermont\\Documents\\GitHub\\MathMoteur\\ProjetMath\\ProjetMath\\ProjetMath.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D0BC97AC-6435-48E8-A6D5-FA741FFAF23D}|ProjetMath\\ProjetMath.vcxproj|solutionrelative:ProjetMath\\ProjetMath.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{D0BC97AC-6435-48E8-A6D5-FA741FFAF23D}|ProjetMath\\ProjetMath.vcxproj|C:\\Users\\lguillermont\\Documents\\GitHub\\MathMoteur\\ProjetMath\\ProjetMath\\Mesh.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D0BC97AC-6435-48E8-A6D5-FA741FFAF23D}|ProjetMath\\ProjetMath.vcxproj|solutionrelative:ProjetMath\\Mesh.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0BC97AC-6435-48E8-A6D5-FA741FFAF23D}|ProjetMath\\ProjetMath.vcxproj|C:\\Users\\lguillermont\\Documents\\GitHub\\MathMoteur\\ProjetMath\\ProjetMath\\Mesh.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D0BC97AC-6435-48E8-A6D5-FA741FFAF23D}|ProjetMath\\ProjetMath.vcxproj|solutionrelative:ProjetMath\\Mesh.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0BC97AC-6435-48E8-A6D5-FA741FFAF23D}|ProjetMath\\ProjetMath.vcxproj|C:\\Users\\lguillermont\\Documents\\GitHub\\MathMoteur\\ProjetMath\\ProjetMath\\Screen.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D0BC97AC-6435-48E8-A6D5-FA741FFAF23D}|ProjetMath\\ProjetMath.vcxproj|solutionrelative:ProjetMath\\Screen.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D0BC97AC-6435-48E8-A6D5-FA741FFAF23D}|ProjetMath\\ProjetMath.vcxproj|C:\\Users\\lguillermont\\Documents\\GitHub\\MathMoteur\\ProjetMath\\ProjetMath\\Settings.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{D0BC97AC-6435-48E8-A6D5-FA741FFAF23D}|ProjetMath\\ProjetMath.vcxproj|solutionrelative:ProjetMath\\Settings.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0BC97AC-6435-48E8-A6D5-FA741FFAF23D}|ProjetMath\\ProjetMath.vcxproj|C:\\Users\\lguillermont\\Documents\\GitHub\\MathMoteur\\ProjetMath\\ProjetMath\\ProjetMath.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D0BC97AC-6435-48E8-A6D5-FA741FFAF23D}|ProjetMath\\ProjetMath.vcxproj|solutionrelative:ProjetMath\\ProjetMath.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0BC97AC-6435-48E8-A6D5-FA741FFAF23D}|ProjetMath\\ProjetMath.vcxproj|C:\\Users\\lguillermont\\Documents\\GitHub\\MathMoteur\\ProjetMath\\ProjetMath\\Screen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D0BC97AC-6435-48E8-A6D5-FA741FFAF23D}|ProjetMath\\ProjetMath.vcxproj|solutionrelative:ProjetMath\\Screen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D0BC97AC-6435-48E8-A6D5-FA741FFAF23D}|ProjetMath\\ProjetMath.vcxproj|C:\\Users\\lguillermont\\Documents\\GitHub\\MathMoteur\\ProjetMath\\ProjetMath\\Settings.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -22,43 +38,95 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Mesh.cpp",
+              "DocumentMoniker": "C:\\Users\\lguillermont\\Documents\\GitHub\\MathMoteur\\ProjetMath\\ProjetMath\\Mesh.cpp",
+              "RelativeDocumentMoniker": "ProjetMath\\Mesh.cpp",
+              "ToolTip": "C:\\Users\\lguillermont\\Documents\\GitHub\\MathMoteur\\ProjetMath\\ProjetMath\\Mesh.cpp",
+              "RelativeToolTip": "ProjetMath\\Mesh.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-12T07:36:55.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Mesh.h",
+              "DocumentMoniker": "C:\\Users\\lguillermont\\Documents\\GitHub\\MathMoteur\\ProjetMath\\ProjetMath\\Mesh.h",
+              "RelativeDocumentMoniker": "ProjetMath\\Mesh.h",
+              "ToolTip": "C:\\Users\\lguillermont\\Documents\\GitHub\\MathMoteur\\ProjetMath\\ProjetMath\\Mesh.h",
+              "RelativeToolTip": "ProjetMath\\Mesh.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-12T07:27:17.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Screen.cpp",
+              "DocumentMoniker": "C:\\Users\\lguillermont\\Documents\\GitHub\\MathMoteur\\ProjetMath\\ProjetMath\\Screen.cpp",
+              "RelativeDocumentMoniker": "ProjetMath\\Screen.cpp",
+              "ToolTip": "C:\\Users\\lguillermont\\Documents\\GitHub\\MathMoteur\\ProjetMath\\ProjetMath\\Screen.cpp",
+              "RelativeToolTip": "ProjetMath\\Screen.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-12T07:12:48.357Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Screen.h",
+              "DocumentMoniker": "C:\\Users\\lguillermont\\Documents\\GitHub\\MathMoteur\\ProjetMath\\ProjetMath\\Screen.h",
+              "RelativeDocumentMoniker": "ProjetMath\\Screen.h",
+              "ToolTip": "C:\\Users\\lguillermont\\Documents\\GitHub\\MathMoteur\\ProjetMath\\ProjetMath\\Screen.h",
+              "RelativeToolTip": "ProjetMath\\Screen.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-12T07:09:57.992Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Settings.h",
               "DocumentMoniker": "C:\\Users\\lguillermont\\Documents\\GitHub\\MathMoteur\\ProjetMath\\ProjetMath\\Settings.h",
               "RelativeDocumentMoniker": "ProjetMath\\Settings.h",
               "ToolTip": "C:\\Users\\lguillermont\\Documents\\GitHub\\MathMoteur\\ProjetMath\\ProjetMath\\Settings.h",
               "RelativeToolTip": "ProjetMath\\Settings.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-11-06T07:21:07.086Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Settings.cpp",
               "DocumentMoniker": "C:\\Users\\lguillermont\\Documents\\GitHub\\MathMoteur\\ProjetMath\\ProjetMath\\Settings.cpp",
               "RelativeDocumentMoniker": "ProjetMath\\Settings.cpp",
               "ToolTip": "C:\\Users\\lguillermont\\Documents\\GitHub\\MathMoteur\\ProjetMath\\ProjetMath\\Settings.cpp",
               "RelativeToolTip": "ProjetMath\\Settings.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-06T07:21:15.512Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "ProjetMath.cpp",
               "DocumentMoniker": "C:\\Users\\lguillermont\\Documents\\GitHub\\MathMoteur\\ProjetMath\\ProjetMath\\ProjetMath.cpp",
               "RelativeDocumentMoniker": "ProjetMath\\ProjetMath.cpp",
               "ToolTip": "C:\\Users\\lguillermont\\Documents\\GitHub\\MathMoteur\\ProjetMath\\ProjetMath\\ProjetMath.cpp",
               "RelativeToolTip": "ProjetMath\\ProjetMath.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-04T07:13:53.049Z",
               "EditorCaption": ""
