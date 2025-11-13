@@ -1,5 +1,6 @@
 #pragma once
 #include "Settings.h"
+#include "Mesh.h"
 
 class Screen
 {
@@ -11,5 +12,6 @@ public:
 private:
 	std::string m_screen;
 	Settings m_settingsScreen;
+	Mesh m_mesh;
 };
 

@@ -1,4 +1,5 @@
 #include "Screen.h"
+#include "Mesh.h"
 #include <iostream>
 
 void Screen::ScreenSimulation()
@@ -18,4 +19,6 @@ void Screen::Display()
     std::cout << "\n==== DISPLAY SCREEN ====\n" << std::endl;
     std::cout << m_screen << std::endl;
     std::cout << "\n==== END SCREEN ====\n" << std::endl;
+    m_mesh.Debug();
+
 }
