@@ -1,23 +1,22 @@
 #pragma once
-#include <string>
 
 class Settings
 {
-public :
-	Settings();
-	Settings(int argc, char* argv[]);
-	int GetScreenHeight();
-	int GetScreenWidth();
+    public:
+    Settings(int argc, char** argv);
+    int GetScreenWidth() const { return m_screenWidth; }
+    int GetScreenHeight() const { return m_screenHeight; }
+    int GetMeshResolution() const { return m_meshResolution; }
 
-private : 
-	friend class Screen;
+    private:
+    void _ParseArguments(int argc, char** argv);
 
-	int m_height;
-	int m_width;
-	int m_argc;
-
-	std::string m_commandHeight;
-	std::string m_commandWidth;
-	std::string m_screen;
+    private:
+    int m_screenWidth;
+    int m_screenHeight;
+    int m_meshResolution;
+    const char* m_screenBackground;
+    const char* m_screenMeshProjection;
+    float m_screenPosition;
+    float m_meshPosition
 };
-

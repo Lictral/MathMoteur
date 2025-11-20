@@ -1,69 +1,62 @@
+#include <cmath>
 #include "Mesh.h"
-#include <iostream>
+#include "Settings.h"
 
-Mesh::Mesh()
+constexpr float PI = 3.14159265f;
+
+Mesh::Mesh(Settings const& settings)
+: m_resolution(settings.GetMeshResolution())
 {
-
 }
 
-Mesh::~Mesh()
+void Mesh::GenerateCircle(float radius)
 {
-
+    _GenerateSector(radius, 2 * PI);
 }
 
-void Mesh::AddVertex(float x, float y, float z)
+void Mesh::GenerateHalfCircle(float radius)
 {
-	m_vertex.push_back(x);
-	m_vertex.push_back(y);
-	m_vertex.push_back(z);
+    _GenerateSector(radius, PI);
 }
 
-void Mesh::CreateMesh()
+void Mesh::GenerateRectangle(float width, float height)
 {
-	while (m_vertex.size() < 12)
-	{
-		AddVertex(0, 0, 0);
-	}
+    m_vertices.resize(m_resolution * m_resolution);
+    for(int i = 0; i < m_resolution; i++)
+    {
+        for(int j = 0; j < m_resolution; j++)
+        {
+            m_vertices[m_resolution * i + j].x = (1.f*i / (m_resolution - 1) - 0.5f) * width;
+            m_vertices[m_resolution * i + j].y = (1.f*j / (m_resolution - 1) - 0.5f) * height;
+            m_vertices[m_resolution * i + j].z = 0.f;
+        }
+    }
+}
+void Mesh::GenerateSquare(float side)
+{
+    GenerateRectangle(side, side);
 }
 
-void Mesh::DisplayVertex()
+void Mesh::Debug() const
 {
-	m_vertexCount++;
-	std::cout << "\nVertex";
-	std::cout << m_vertexCount;
-	std::cout << " : {";
-	for (int i = 0; i < m_vertex.size(); i++)
-	{
-		if (i % 3 == 0 && i != 0)
-		{
-			m_vertexCount++;
-			std::cout << "},\n";
-			std::cout << "\nVertex";
-			std::cout << m_vertexCount;
-			std::cout << " : {";
-			std::cout << m_vertex[i];
-			std::cout << ", ";
-		}
-		else
-		{
-			std::cout << m_vertex[i];
-			int temp = i + 1;
-			if (temp % 3 != 0)
-				std::cout << ", ";
-		}
-		if (m_vertex.size() == i + 1)
-			break;
-	}
-	std::cout << "}\n";
+    for(Vertex const& vertex : m_vertices)
+    {
+        vertex.Debug();
+    }
 }
 
-
-void Mesh::Debug()
+void Mesh::_GenerateSector(float radius, float angle)
 {
-	//AddVertex(12, -5, 0.5);
-	//AddVertex(1, 7, -2.8);
-	//AddVertex(1, 7, -2.8);
-	//AddVertex(1, 7, -2.8);
-	CreateMesh();
-	DisplayVertex();
+    m_vertices.resize(m_resolution * m_resolution);
+    for(int i = 0; i < m_resolution; i++)
+    {
+        float r = (radius * i) / (m_resolution - 1);
+        for(int j = 0; j < m_resolution; j++)
+        {
+            float theta = (angle * j) / (m_resolution - 1);
+            m_vertices[m_resolution * i + j].x = r * std::cos(theta);
+            m_vertices[m_resolution * i + j].y = r * std::sin(theta);
+            m_vertices[m_resolution * i + j].z = 0.f;
+        }
+    }
 }

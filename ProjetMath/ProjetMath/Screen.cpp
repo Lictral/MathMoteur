@@ -1,24 +1,27 @@
-#include "Screen.h"
-#include "Mesh.h"
 #include <iostream>
+#include "Screen.h"
+#include "Settings.h"
 
-void Screen::ScreenSimulation()
+Screen::Screen(Settings const& settings)
+: m_width(settings.GetScreenWidth())
+, m_height(settings.GetScreenHeight())
+, m_pixels(m_width * m_height, '.')
 {
-    for (int i = 0; i < m_settingsScreen.m_height; i++)
+}
+
+void Screen::Display() const
+{
+    for(int i = 0; i < m_height; i++)
     {
-        for (int j = 0; j < m_settingsScreen.m_width; j++)
+        for(int j = 0; j < m_width; j++)
         {
-            m_screen += '.';
+            std::cout << m_pixels[m_width * i + j];
         }
-        m_screen += '\n';
+        std::cout << std::endl;
     }
 }
 
-void Screen::Display()
+void Screen::Display(Mesh const& mesh)
 {
-    std::cout << "\n==== DISPLAY SCREEN ====\n" << std::endl;
-    std::cout << m_screen << std::endl;
-    std::cout << "\n==== END SCREEN ====\n" << std::endl;
-    m_mesh.Debug();
 
 }

@@ -1,45 +1,56 @@
 #include <iostream>
-#include <ddkernel.h>
-#include <string>
-#include <cstdlib>
+#include <windows.h> // For console settings
 #include "Settings.h"
 #include "Screen.h"
+#include "Mesh.h"
 
-int main(int argc, char* argv[])
+void InitConsole()
 {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     DWORD mode;
     GetConsoleMode(hConsole, &mode);
     SetConsoleMode(hConsole, mode | ENABLE_VIRTUAL_TERMINAL_PROCESSING);
-
-    std::cout << "\033[?25l";       // Cursor invisible
-    //std::cout << "\033[?25h";     // Cursor visible
-    std::cout << "Hello World!\n";
-    std::cout << "\033[2J";         // Erase console
-    std::cout << "\033[H";          // Home position
-    
-    if (argc < 4)
-    {
-        std::cout << "you need at least 1 or 2 command argument to use" << std::endl;
-        return false;
-    }
-
-    //if (argv[1] != "-h")
-    //{
-    //    std::cout << "you need to write the command -h" << std::endl;
-    //    return false;
-    //}
-
-    //if (argv[3] != "-w")
-    //{
-    //    std::cout << "you need to write the command -w" << std::endl;
-    //    return false;
-    //}
-
-    Settings settings(argc, argv);
-    Screen screen;
-    screen.ScreenSimulation();
-    screen.Display();
-
 }
 
+void ClearConsole()
+{
+    std::cout << "\x1b[2J"; // Remove all characters in console
+    std::cout << "\x1b[H"; // Set cursor pos to "home" position (0,0)
+}
+
+void SetCursorVisible(bool visible)
+{
+    if (visible)
+    {
+        std::cout << "\x1b[?25h"; // Make cursor visible
+    }
+    else
+    {
+        std::cout << "\x1b[?25l"; // Make cursor invisible
+    }
+}
+
+int main(int argc, char** argv)
+{
+    InitConsole();
+    ClearConsole();
+    SetCursorVisible(false);
+    Settings settings(argc, argv);
+    Screen screen(settings);
+    screen.Display();
+    Mesh mesh(settings);
+    mesh.GenerateRectangle(2.f, 4.f);
+    std::cout << "Rectangle 2x4:" << std::endl;
+    mesh.Debug();
+    mesh.GenerateSquare(6.f);
+    std::cout << "Square 6x6:" << std::endl;
+    mesh.Debug();
+    mesh.GenerateCircle(2.f);
+    std::cout << "Circle radius 2:" << std::endl;
+    mesh.Debug();
+    mesh.GenerateHalfCircle(1.f);
+    std::cout << "Half Circle radius 1:" << std::endl;
+    mesh.Debug();
+    SetCursorVisible(true);
+    return 0;
+}

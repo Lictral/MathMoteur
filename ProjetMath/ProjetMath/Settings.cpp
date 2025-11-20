@@ -1,33 +1,55 @@
 #include "Settings.h"
-#include <iostream>
+#include "Mesh.h"
+#include <string>
 
-Settings::Settings()
+Settings::Settings(int argc, char** argv)
+: m_screenWidth(100)
+, m_screenHeight(20)
+, m_meshResolution(32)
+, m_screenBackground(".")
+, m_screenMeshProjection("X")
+, m_screenPosition(3.3)
+, m_meshPosition(5)
 {
-    m_argc = 3;
-    m_height = 20;
-    m_width = 100;
-    m_commandHeight = "-h";
-    m_commandWidth = "-w";
+    _ParseArguments(argc, argv);
 }
 
-Settings::Settings(int argc, char* argv[])
+void Settings::_ParseArguments(int argc, char** argv)
 {
-	m_argc = argc;
-    m_commandHeight = argv[1];
-	m_height = std::atoi(argv[2]);
-    m_commandWidth = argv[3];
-	m_width = std::atoi(argv[4]);
-    m_screen = '\n';
+    // Elegant solution from @T.Rosselet
+    for (int i = 1; i < argc; i++) //i starts at 1 because command line arguments start with argv[1] (argv[0] is the name of the exe)
+    {
+        std::string arg = argv[i];
+        if (arg == "-w" && i + 1 < argc)
+        {
+            m_screenWidth = std::atoi(argv[i+1]);
+            i++;
+        }
+        else if (arg == "-h" && i + 1 < argc)
+        {
+            m_screenHeight = std::atoi(argv[i+1]);
+            i++;
+        }
+        else if (arg == "-r" && i + 1 < argc)
+        {
+            m_meshResolution = std::atoi(argv[i+1]);
+            i++;
+        }
+        else if (arg == "-b" && i + 1 < argc)
+        {
+            m_screenBackground = argv[i + 1];
+        }
+        else if (arg == "-p" && i + 1 < argc)
+        {
+            m_screenMeshProjection = argv[i + 1];
+        }
+        else if (arg == "-s" && i + 1 < argc)
+        {
+            m_screenPosition = std::atoi(argv[i + 1]);
+        }
+        else if (arg == "-m" && i + 1 < argc)
+        {
+            m_meshPosition = std::atoi(argv[i + 1]);
+        }
+    }
 }
-
-int Settings::GetScreenHeight()
-{
-    return m_height;
-}
-
-int Settings::GetScreenWidth()
-{
-    return m_width;
-}
-
-

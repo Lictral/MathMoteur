@@ -1,17 +1,18 @@
 #pragma once
-#include "Settings.h"
+#include <vector>
 #include "Mesh.h"
+
+class Settings;
 
 class Screen
 {
-public:
+    public:
+    Screen(Settings const& settings);
+    void Display() const;
+    void Display(Mesh const& mesh);
 
-	void ScreenSimulation();
-	void Display();
-
-private:
-	std::string m_screen;
-	Settings m_settingsScreen;
-	Mesh m_mesh;
+    private:
+    int m_width;
+    int m_height;
+    std::vector<char> m_pixels;
 };
-
