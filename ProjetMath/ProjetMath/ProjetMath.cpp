@@ -39,17 +39,22 @@ int main(int argc, char** argv)
     Screen screen(settings);
     screen.Display();
     Mesh mesh(settings);
-    mesh.GenerateRectangle(10.f, 20.f);
-    std::cout << "Rectangle 10x20:" << std::endl;
+    //mesh.GenerateRectangle(10.f, 20.f);
+    //std::cout << "Rectangle 10x20:" << std::endl;
+    //screen.Display(mesh);
+    //mesh.GenerateSquare(20.f);
+    //std::cout << "Square 20x20:" << std::endl;
+    //screen.Display(mesh);
+    //mesh.GenerateCircle(15.f);
+    //std::cout << "Circle radius 15:" << std::endl;
+    //screen.Display(mesh);
+    //mesh.GenerateHalfCircle(15.f);
+    //mesh.Rotate(3.141 / 2.f, Axis::Z);
+    //std::cout << "Half Circle radius 15:" << std::endl;
+    //screen.Display(mesh);
+    mesh.GenerateTorus(5.f, 5.f);
+    std::cout << "Torus maxRadius 5 , minRadius 5 :" << std::endl;
     screen.Display(mesh);
-    mesh.GenerateSquare(20.f);
-    std::cout << "Square 20x20:" << std::endl;
-    screen.Display(mesh);
-    mesh.GenerateCircle(15.f);
-    std::cout << "Circle radius 15:" << std::endl;
-    screen.Display(mesh);
-    mesh.GenerateHalfCircle(15.f);
-    std::cout << "Half Circle radius 15:" << std::endl;
-    screen.Display(mesh);
+
     return 0;
 }
