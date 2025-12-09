@@ -52,7 +52,7 @@ int main(int argc, char** argv)
     //mesh.Rotate(3.141 / 2.f, Axis::Z);
     //std::cout << "Half Circle radius 15:" << std::endl;
     //screen.Display(mesh);
-    mesh.GenerateTorus(5.f, 5.f);
+    mesh.GenerateTorus(4.f, 0.9f);
     std::cout << "Torus maxRadius 5 , minRadius 5 :" << std::endl;
     screen.Display(mesh);
 

@@ -17,7 +17,7 @@ void Vertex::Rotate(float angle, Axis axis)
         case Axis::Y:
         {
             x = previous.x * std::cos(angle) + previous.z * std::sin(angle);
-            z = - previous.x * std::sin(angle) + previous.z * std::cos(angle);
+            z = (-previous.x * std::sin(angle)) + previous.z * std::cos(angle);
         }
         case Axis::Z:
         {
@@ -63,11 +63,16 @@ void Mesh::GenerateSquare(float side)
 void Mesh::GenerateTorus(float majorRadius, float minorRadius)
 {
     m_vertices.resize(m_resolution * m_resolution);
-    for (Vertex& vertex : m_vertices)
+    for (int i = 0; i < m_resolution; i++)
     {
-        
-        vertex.Rotate(majorRadius, Axis::Z);
-        vertex.Rotate(minorRadius, Axis::Z);
+        float gamma = ((2 * PI) * i) / (m_resolution - 1);
+        for (int j = 0; j < m_resolution; j++)
+        {
+            float theta = ((2 * PI) * j) / (m_resolution - 1);
+            m_vertices[m_resolution * i + j].x = majorRadius + minorRadius * std::cos(theta);
+            m_vertices[m_resolution * i + j].y = minorRadius * std::sin(theta);
+            m_vertices[m_resolution * i + j].Rotate(gamma, Axis::Y);
+        }
     }
 }
 
