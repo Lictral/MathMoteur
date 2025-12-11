@@ -54,16 +54,18 @@ int main(int argc, char** argv)
 
     mesh.GenerateTorus(4.f, 0.9f);
     screen.Display(mesh);
-    //while (true)
-    //{
-    //    std::cout << "\x1b[H";
+    while (true)
+    {
+        std::cout << "\x1b[H";
 
-    //    mesh.Rotate(settings.GetMeshRotationXPerFrame(), Axis::X);
+        mesh.Rotate(settings.GetMeshRotationXPerFrame(), Axis::X);
+        mesh.Rotate(settings.GetMeshRotationXPerFrame(), Axis::Y);
+        mesh.Rotate(settings.GetMeshRotationXPerFrame(), Axis::Z);
 
-    //    screen.Display(mesh);
+        screen.Display(mesh);
 
-    //    std::this_thread::sleep_for(std::chrono::microseconds(settings.GetFrameDuration()));
-    //}
+        std::this_thread::sleep_for(std::chrono::microseconds(settings.GetFrameDuration()/5));
+    }
 
     SetCursorVisible(true);
     return 0;

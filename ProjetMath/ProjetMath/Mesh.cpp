@@ -1,8 +1,8 @@
+#define _USE_MATH_DEFINES
+
 #include <cmath>
 #include "Mesh.h"
 #include "Settings.h"
-
-constexpr float PI = 3.14159265f;
 
 void Vertex::Rotate(float angle, Axis axis)
 {
@@ -13,20 +13,20 @@ void Vertex::Rotate(float angle, Axis axis)
     {
         y = previous.y * std::cos(angle) - previous.z * std::sin(angle);
         z = previous.y * std::sin(angle) + previous.z * std::cos(angle);
-        break;
     }
+    break;
     case Axis::Y:
     {
-        x = previous.x * std::cos(angle) + previous.z * std::sin(angle);
-        z = -previous.x * std::sin(angle) + previous.z * std::cos(angle);
-        break;
+        x = previous.z * std::sin(angle) + previous.x * std::cos(angle);
+        z = previous.z * std::cos(angle) - previous.x * std::sin(angle);
     }
+    break;
     case Axis::Z:
     {
         x = previous.x * std::cos(angle) - previous.y * std::sin(angle);
         y = previous.x * std::sin(angle) + previous.y * std::cos(angle);
-        break;
     }
+    break;
     }
 }
 
@@ -37,12 +37,12 @@ Mesh::Mesh(Settings const& settings)
 
 void Mesh::GenerateCircle(float radius)
 {
-    _GenerateSector(radius, 2 * PI);
+    _GenerateSector(radius, 2 * M_PI);
 }
 
 void Mesh::GenerateHalfCircle(float radius)
 {
-    _GenerateSector(radius, PI);
+    _GenerateSector(radius, M_PI);
 }
 
 void Mesh::GenerateRectangle(float width, float height)
@@ -69,17 +69,13 @@ void Mesh::GenerateTorus(float majorRadius, float minorRadius)
     m_vertices.resize(m_resolution * m_resolution);
     for (int i = 0; i < m_resolution; i++)
     {
-        float gamma = ((2 * PI) * i) / (m_resolution - 1);
-
+        float angleY = (2 * M_PI * i) / (m_resolution - 1);
         for (int j = 0; j < m_resolution; j++)
         {
-            float theta = ((2 * PI) * j) / (m_resolution - 1);
-
-            m_vertices[m_resolution * i + j].x = majorRadius + minorRadius * std::cos(theta);
-            m_vertices[m_resolution * i + j].y = minorRadius * std::sin(theta);
-            m_vertices[m_resolution * i + j].z = 0.f;
-
-            m_vertices[m_resolution * i + j].Rotate(gamma, Axis::Y);
+            float angleZ = (2 * M_PI * j) / (m_resolution - 1);
+            m_vertices[m_resolution * i + j].x = majorRadius + minorRadius * std::cos(angleZ);
+            m_vertices[m_resolution * i + j].y = minorRadius * std::sin(angleZ);
+            m_vertices[m_resolution * i + j].Rotate(angleY, Axis::Y);
         }
     }
 }
