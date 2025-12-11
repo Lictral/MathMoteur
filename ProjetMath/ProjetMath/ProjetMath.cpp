@@ -1,5 +1,8 @@
 #include <iostream>
-#include <windows.h> // For console settings
+#include <windows.h>
+#include <signal.h>
+#include <chrono>
+#include <thread>
 #include "Settings.h"
 #include "Screen.h"
 #include "Mesh.h"
@@ -14,47 +17,54 @@ void InitConsole()
 
 void ClearConsole()
 {
-    std::cout << "\x1b[2J"; // Remove all characters in console
-    std::cout << "\x1b[H"; // Set cursor pos to "home" position (0,0)
+    std::cout << "\x1b[2J";
+    std::cout << "\x1b[H";
 }
 
-void SetCursorVisible(bool visible)
+void SetCursorVisible(bool _visible)
 {
-    if (visible)
+    if (_visible)
     {
-        std::cout << "\x1b[?25h"; // Make cursor visible
+        std::cout << "\x1b[?25h";
     }
     else
     {
-        std::cout << "\x1b[?25l"; // Make cursor invisible
+        std::cout << "\x1b[?25l";
     }
+}
+
+void OnKill(int _signum)
+{
+    ClearConsole();
+    SetCursorVisible(true);
+    exit(_signum);
 }
 
 int main(int argc, char** argv)
 {
+    signal(SIGINT, OnKill);
+
     InitConsole();
     ClearConsole();
     SetCursorVisible(false);
+
     Settings settings(argc, argv);
     Screen screen(settings);
-    screen.Display();
     Mesh mesh(settings);
-    //mesh.GenerateRectangle(10.f, 20.f);
-    //std::cout << "Rectangle 10x20:" << std::endl;
-    //screen.Display(mesh);
-    //mesh.GenerateSquare(20.f);
-    //std::cout << "Square 20x20:" << std::endl;
-    //screen.Display(mesh);
-    //mesh.GenerateCircle(15.f);
-    //std::cout << "Circle radius 15:" << std::endl;
-    //screen.Display(mesh);
-    //mesh.GenerateHalfCircle(15.f);
-    //mesh.Rotate(3.141 / 2.f, Axis::Z);
-    //std::cout << "Half Circle radius 15:" << std::endl;
-    //screen.Display(mesh);
-    mesh.GenerateTorus(4.f, 0.9f);
-    std::cout << "Torus maxRadius 5 , minRadius 5 :" << std::endl;
-    screen.Display(mesh);
 
+    mesh.GenerateTorus(4.f, 0.9f);
+    screen.Display(mesh);
+    //while (true)
+    //{
+    //    std::cout << "\x1b[H";
+
+    //    mesh.Rotate(settings.GetMeshRotationXPerFrame(), Axis::X);
+
+    //    screen.Display(mesh);
+
+    //    std::this_thread::sleep_for(std::chrono::microseconds(settings.GetFrameDuration()));
+    //}
+
+    SetCursorVisible(true);
     return 0;
 }

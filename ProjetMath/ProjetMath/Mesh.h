@@ -4,7 +4,7 @@
 
 class Settings;
 
-enum class Axis 
+enum class Axis
 {
     X,
     Y,
@@ -15,6 +15,7 @@ struct Vertex
 {
     void Debug() const { std::printf("[x=%5.2f, y=%5.2f, z=%5.2f]\n", x, y, z); }
     void Rotate(float angle, Axis axis);
+
     float x;
     float y;
     float z;
@@ -22,22 +23,21 @@ struct Vertex
 
 class Mesh
 {
-    public:
+public:
     Mesh(Settings const& settings);
     std::vector<Vertex> const& GetVertices() const { return m_vertices; }
     void GenerateCircle(float radius);
     void GenerateHalfCircle(float radius);
     void GenerateRectangle(float width, float height);
     void GenerateSquare(float side);
-    void GenerateTorus(float majorRadius, float minusRadius);
+    void GenerateTorus(float majorRadius, float minorRadius);
+    void Debug() const;
     void Rotate(float angle, Axis axis);
 
-    void Debug() const;
-
-    private:
+private:
     void _GenerateSector(float radius, float angle);
 
-    private:
+private:
     std::vector<Vertex> m_vertices;
     int m_resolution;
 };
