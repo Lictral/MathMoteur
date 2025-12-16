@@ -51,7 +51,7 @@ int main(int argc, char** argv)
     Settings settings(argc, argv);
     Screen screen(settings);
     Mesh mesh(settings);
-
+    mesh.Debug();
     mesh.GenerateTorus(4.f, 0.9f);
     screen.Display(mesh);
     while (true)
@@ -66,6 +66,7 @@ int main(int argc, char** argv)
 
         std::this_thread::sleep_for(std::chrono::microseconds(settings.GetFrameDuration()/5));
     }
+
 
     SetCursorVisible(true);
     return 0;

@@ -13,18 +13,24 @@ void Vertex::Rotate(float angle, Axis axis)
     {
         y = previous.y * std::cos(angle) - previous.z * std::sin(angle);
         z = previous.y * std::sin(angle) + previous.z * std::cos(angle);
+        ny = previous.ny * std::cos(angle) - previous.nz * std::sin(angle);
+        nz = previous.ny * std::sin(angle) + previous.nz * std::cos(angle);
     }
     break;
     case Axis::Y:
     {
         x = previous.z * std::sin(angle) + previous.x * std::cos(angle);
         z = previous.z * std::cos(angle) - previous.x * std::sin(angle);
+        nx = previous.nz * std::sin(angle) + previous.nx * std::cos(angle);
+        nz = previous.nz * std::cos(angle) - previous.nx * std::sin(angle);
     }
     break;
     case Axis::Z:
     {
         x = previous.x * std::cos(angle) - previous.y * std::sin(angle);
         y = previous.x * std::sin(angle) + previous.y * std::cos(angle);
+        nx = previous.nx * std::cos(angle) - previous.ny * std::sin(angle);
+        ny = previous.nx * std::sin(angle) + previous.ny * std::cos(angle);
     }
     break;
     }
@@ -55,6 +61,9 @@ void Mesh::GenerateRectangle(float width, float height)
             m_vertices[m_resolution * i + j].x = (1.f * i / (m_resolution - 1) - 0.5f) * width;
             m_vertices[m_resolution * i + j].y = (1.f * j / (m_resolution - 1) - 0.5f) * height;
             m_vertices[m_resolution * i + j].z = 0.f;
+            m_vertices[m_resolution * i + j].nx = 0.f;
+            m_vertices[m_resolution * i + j].ny = 0.f;
+            m_vertices[m_resolution * i + j].nz = -1.f;
         }
     }
 }
@@ -75,6 +84,9 @@ void Mesh::GenerateTorus(float majorRadius, float minorRadius)
             float angleZ = (2 * M_PI * j) / (m_resolution - 1);
             m_vertices[m_resolution * i + j].x = majorRadius + minorRadius * std::cos(angleZ);
             m_vertices[m_resolution * i + j].y = minorRadius * std::sin(angleZ);
+            m_vertices[m_resolution * i + j].Rotate(angleY, Axis::Y);
+            m_vertices[m_resolution * i + j].nx = majorRadius + minorRadius * std::cos(angleZ);
+            m_vertices[m_resolution * i + j].ny = minorRadius * std::sin(angleZ);
             m_vertices[m_resolution * i + j].Rotate(angleY, Axis::Y);
         }
     }
@@ -108,6 +120,9 @@ void Mesh::_GenerateSector(float radius, float angle)
             m_vertices[m_resolution * i + j].x = r * std::cos(theta);
             m_vertices[m_resolution * i + j].y = r * std::sin(theta);
             m_vertices[m_resolution * i + j].z = 0.f;
+            m_vertices[m_resolution * i + j].nx = std::cos(theta);
+            m_vertices[m_resolution * i + j].ny = std::sin(theta);
+            m_vertices[m_resolution * i + j].nz = 0.f;
         }
     }
 }

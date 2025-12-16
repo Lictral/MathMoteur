@@ -1,2 +1,8 @@
-﻿  ProjetMath.cpp
+﻿  Mesh.cpp
+C:\Users\lguillermont\Documents\GitHub\MathMoteur\ProjetMath\ProjetMath\Mesh.cpp(46,31): warning C4305: 'argument' : troncation de 'double' à 'float'
+C:\Users\lguillermont\Documents\GitHub\MathMoteur\ProjetMath\ProjetMath\Mesh.cpp(51,29): warning C4305: 'argument' : troncation de 'double' à 'float'
+C:\Users\lguillermont\Documents\GitHub\MathMoteur\ProjetMath\ProjetMath\Mesh.cpp(81,22): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\lguillermont\Documents\GitHub\MathMoteur\ProjetMath\ProjetMath\Mesh.cpp(84,26): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+  ProjetMath.cpp
+  Génération de code en cours...
   ProjetMath.vcxproj -> C:\Users\lguillermont\Documents\GitHub\MathMoteur\ProjetMath\x64\Debug\ProjetMath.exe
