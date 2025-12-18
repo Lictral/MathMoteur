@@ -36,6 +36,8 @@ void Vertex::Rotate(float angle, Axis axis)
     }
 }
 
+
+
 Mesh::Mesh(Settings const& settings)
     : m_resolution(settings.GetMeshResolution())
 {

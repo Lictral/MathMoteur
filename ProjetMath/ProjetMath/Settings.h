@@ -15,11 +15,20 @@ public:
     float GetMeshRotationYPerFrame() const { return m_meshRotationYPerFrame; }
     float GetMeshRotationZPerFrame() const { return m_meshRotationZPerFrame; }
     int GetFrameDuration() const { return m_frameDuration; }
+    float GetLightDirectionX() const { return m_light.lx; }
+    float GetLightDirectionY() const { return m_light.ly; }
+    float GetLightDirectionZ() const { return m_light.lz; }
 
 private:
     void _ParseArguments(int argc, char** argv);
 
 private:
+    struct LightDir
+    {
+        float lx;
+        float ly;
+        float lz;
+    };
     int m_screenWidth;
     int m_screenHeight;
     char m_screenBackground;
@@ -31,4 +40,6 @@ private:
     float m_meshRotationYPerFrame;
     float m_meshRotationZPerFrame;
     int m_frameDuration;
+    LightDir m_light;
+    
 };

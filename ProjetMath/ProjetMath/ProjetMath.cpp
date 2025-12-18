@@ -53,6 +53,7 @@ int main(int argc, char** argv)
     Mesh mesh(settings);
     mesh.Debug();
     mesh.GenerateTorus(4.f, 0.9f);
+    //mesh.GenerateRectangle(10.f, 12.f);
     screen.Display(mesh);
     while (true)
     {

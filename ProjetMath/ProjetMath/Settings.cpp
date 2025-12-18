@@ -77,5 +77,20 @@ void Settings::_ParseArguments(int argc, char** argv)
             m_frameDuration = std::atoi(argv[i + 1]);
             i++;
         }
+        else if (arg == "-lx" && i + 1 < argc)
+        {
+            m_light.lx = std::atoi(argv[i + 1]);
+            i++;
+        }
+        else if (arg == "-ly" && i + 1 < argc)
+        {
+            m_light.ly = std::atoi(argv[i + 1]);
+            i++;
+        }
+        else if (arg == "-lz" && i + 1 < argc)
+        {
+            m_light.lz = std::atoi(argv[i + 1]);
+            i++;
+        }
     }
 }
